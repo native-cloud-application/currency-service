@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: currency-service
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: currency-service
+    spec:
+      containers:
+      - name: currency-service
+        image: iosr/currency-service
+        ports:
+        - containerPort: 8080
